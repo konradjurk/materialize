@@ -2481,6 +2481,11 @@ if (jQuery) {
                 }
               });
           }
+          
+          // Callback
+          if (typeof(options.onClose) === 'function') {
+            options.onClose.call(this, menu);
+          }
         };
 
 
@@ -2686,6 +2691,11 @@ if (jQuery) {
                 panning = false;
               }
             });
+            
+            // Callback
+            if (typeof(options.onOpen) === 'function') {
+              options.onOpen.call(this, menu);
+            }
           }
 
           return false;
